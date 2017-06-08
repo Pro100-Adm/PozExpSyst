@@ -1,5 +1,4 @@
 from cgi import parse_qs
-from exp_syst_calc import *
 html = """Введите значения в интервале от 0 до 1 в формате '0.1'.<br>
 <form method="get">Вы предпочитаете телефон компании Samsung?<input name="Answer1"></input><br>
 <form method="get">Вы предпочитаете телефон компании Apple?<input name="Answer2"></input><br>
