@@ -39,7 +39,7 @@ def calc(x):
             if i==list(ver_var_Len_X.keys())[r]:
                 Len_X = x[i]*list(ver_var_Len_X.values())[r]
         for s in range(0,len(ver_var_Len_Z)-1):
-            if i==list(ver_var__Len_Z.keys())[s]:
+            if i==list(ver_var_Len_Z.keys())[s]:
                 Len_Z = x[i]*list(ver_var_Len_Z.values())[s]
     y=[str(Sams_A3),str(Sams_A5),str(Sams_S7),str(Sams_S8),str(Iphone_6S),str(Iphone_7),str(Len_K5),str(Len_K6),str(Len_X),str(Len_Z)]
     return y
@@ -82,7 +82,8 @@ def wsgi_app(environ, start_response):
         try:
             for i in range(0,len(x)-1):
                 x[i]=float(x[i])
-            response_body=str(x[0])
+            y=calc(x)
+            response_body="Samsung Galaxy A3: "+str(y[0])+"<br>"+"Samsung Galaxy A5: "+str(y[1])+"<br>"+"Samsung Galaxy S7: "+str(y[2])+"<br>"+"Samsung Galaxy S8: "+str(y[3])+"<br>"+"iPhone6S: "+str(y[4])+"<br>"+"iPhone7: "+str(y[5])+"<br>"+"Lenovo Vibe K5 Note: "+str(y[6])+"<br>"+"Lenovo K6 Note: "+str(y[7])+"<br>"+"Lenovo Moto X Style: "+str(y[8])+"<br>"+"Lenovo Mote Z: "+str(y[9])+"<br>"
             start_response(status, response_headers)
             yield response_body.encode()
         except:
