@@ -82,7 +82,7 @@ def wsgi_app(environ, start_response):
         try:
             for i in range(0,len(x)-1):
                 x[i]=float(x[i])
-            response_body=x[0]
+            response_body=str(x[0])
             start_response(status, response_headers)
             yield response_body.encode()
         except:
