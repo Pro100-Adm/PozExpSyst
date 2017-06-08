@@ -83,7 +83,7 @@ def wsgi_app(environ, start_response):
             for i in range(0,len(x)-1):
                 x[i]=float(x[i])
             y=calc(x)
-            response_body="Samsung Galaxy A3: "+str(y[0])+"<br>"+"Samsung Galaxy A5: "+str(y[1])+"<br>"+"Samsung Galaxy S7: "+str(y[2])+"<br>"+"Samsung Galaxy S8: "+str(y[3])+"<br>"+"iPhone6S: "+str(y[4])+"<br>"+"iPhone7: "+str(y[5])+"<br>"+"Lenovo Vibe K5 Note: "+str(y[6])+"<br>"+"Lenovo K6 Note: "+str(y[7])+"<br>"+"Lenovo Moto X Style: "+str(y[8])+"<br>"+"Lenovo Mote Z: "+str(y[9])+"<br>"
+            response_body=x[0]
             start_response(status, response_headers)
             yield response_body.encode()
         except:
